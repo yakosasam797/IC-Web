@@ -43,7 +43,7 @@ export default async function JournalArticle({ params }: Props) {
             <p>Planned sections: the question behind the piece, what to observe in your own home, material and light considerations specific to Bangalore, and when to ask a designer.</p>
             <p>Final copy will be added by the studio before publishing.</p>
           </div>
-          <Link href="/journal" className="mt-8 inline-block text-[13px] font-medium tracking-[0.08em] text-[#3A2016]">← BACK TO JOURNAL</Link>
+          <Link href="/journal" className="alink mt-8 inline-block text-[13px] font-medium tracking-[0.08em] text-[#3A2016]"><span className="arr-l" aria-hidden>←</span> BACK TO JOURNAL</Link>
         </div>
       </div>
       <CtaBand />

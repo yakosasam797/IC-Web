@@ -81,7 +81,7 @@ export default async function ProjectPage({ params }: Props) {
 
         <div className="mx-auto max-w-7xl space-y-4 px-5 pb-16 md:px-8 md:pb-24">
           {p.gallery.map((g, i) => (
-            <Reveal image key={g}>
+            <Reveal image key={g} delay={i * 80}>
               <Image
                 src={g}
                 alt={`${p.title} view ${i + 1}`}
@@ -96,8 +96,8 @@ export default async function ProjectPage({ params }: Props) {
           <p className="pt-2 text-[13px] text-[#685745]">
             Photography placeholders — replace with verified InfinityCrafts project photography before launch.
           </p>
-          <Link href="/work" className="inline-block pt-2 text-[13px] font-medium tracking-[0.08em] text-[#3A2016]">
-            ← BACK TO ALL WORK
+          <Link href="/work" className="alink inline-block pt-2 text-[13px] font-medium tracking-[0.08em] text-[#3A2016]">
+            <span className="arr-l" aria-hidden>←</span> BACK TO ALL WORK
           </Link>
         </div>
       </section>

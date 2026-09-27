@@ -33,9 +33,9 @@ export default function WorkPage() {
       <section className="bg-[#F4F2EF]">
         <div className="mx-auto max-w-7xl space-y-14 px-5 py-14 md:px-8 md:py-20">
           {projects.map((p, i) => (
-            <Reveal key={p.slug}>
-              <article data-category={p.category} className="work-card group grid gap-6 md:grid-cols-12 md:items-end">
-                <Link href={`/work/${p.slug}`} className="block overflow-hidden md:col-span-9">
+            <article key={p.slug} data-category={p.category} className="work-card group grid gap-6 md:grid-cols-12 md:items-end">
+              <Reveal image className="md:col-span-9">
+                <Link href={`/work/${p.slug}`} className="block overflow-hidden">
                   <Image
                     src={p.heroImage}
                     alt={`${p.title}, ${p.location}`}
@@ -47,18 +47,20 @@ export default function WorkPage() {
                     className="img-calm aspect-[16/9] w-full object-cover"
                   />
                 </Link>
-                <div className="md:col-span-3">
+              </Reveal>
+              <Reveal delay={140} className="md:col-span-3">
+                <div>
                   <p className="text-[12px] tracking-[0.12em] text-[#685745]">
                     {p.category} — {p.year}
                   </p>
                   <h2 className="mt-2 text-2xl font-medium text-[#3A2016] md:text-[28px]">{p.title}</h2>
                   <p className="mt-1 text-[14px] text-[#3A2016]/70">{p.location}</p>
-                  <Link href={`/work/${p.slug}`} className="mt-4 inline-block text-[13px] font-medium tracking-[0.08em] text-[#3A2016]">
-                    VIEW PROJECT →
+                  <Link href={`/work/${p.slug}`} className="alink mt-4 inline-block text-[13px] font-medium tracking-[0.08em] text-[#3A2016]">
+                    VIEW PROJECT <span className="arr" aria-hidden>→</span>
                   </Link>
                 </div>
-              </article>
-            </Reveal>
+              </Reveal>
+            </article>
           ))}
         </div>
       </section>

@@ -17,9 +17,9 @@ export function CtaBand({
         <div className="flex flex-wrap gap-3">
           <Link
             href="/contact"
-            className="bg-[#E9E8E8] px-7 py-3.5 text-[13px] font-medium tracking-[0.06em] text-[#3A2016] hover:bg-white"
+            className="group bg-[#E9E8E8] px-7 py-3.5 text-[13px] font-medium tracking-[0.06em] text-[#3A2016] hover:bg-white"
           >
-            START A PROJECT →
+            START A PROJECT <span className="arr" aria-hidden>→</span>
           </Link>
           <Link
             href="/work"

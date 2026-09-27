@@ -41,7 +41,7 @@ export default function ApproachPage() {
           </div>
           <ol className="md:col-span-7">
             {steps.map(([t, c], i) => (
-              <Reveal key={t}>
+              <Reveal key={t} delay={i * 80}>
                 <li className="grid grid-cols-[56px_1fr] gap-4 border-t border-[#3A2016]/15 py-6">
                   <span className="text-[13px] text-[#685745]">0{i + 1}</span>
                   <span>

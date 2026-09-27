@@ -26,13 +26,13 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+      className={`site-header fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled
           ? "bg-[#E9E8E8]/92 shadow-[0_1px_0_rgba(58,32,22,0.12)] backdrop-blur-md"
           : "bg-gradient-to-b from-black/35 to-transparent"
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 md:h-[72px] md:px-8">
+      <div className={`mx-auto flex max-w-7xl items-center justify-between px-5 transition-all duration-500 md:px-8 ${scrolled ? "h-14 md:h-16" : "h-16 md:h-[72px]"}`}>
         <Link href="/" className="flex items-center" aria-label="InfinityCrafts home">
           {/* Supplied logo assets, used exactly as provided — white over imagery, brown on the light bar */}
           <Image

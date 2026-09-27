@@ -60,9 +60,9 @@ export default function Home() {
             </p>
             <Link
               href="/about"
-              className="mt-7 inline-block border-b border-[#3A2016] pb-1 text-[13px] font-medium tracking-[0.08em] text-[#3A2016]"
+              className="alink mt-7 inline-block border-b border-[#3A2016] pb-1 text-[13px] font-medium tracking-[0.08em] text-[#3A2016]"
             >
-              DISCOVER INFINITYCRAFTS →
+              DISCOVER INFINITYCRAFTS <span className="arr" aria-hidden>→</span>
             </Link>
           </Reveal>
           <Reveal image>
@@ -104,11 +104,11 @@ export default function Home() {
 
           <div className="mt-12 space-y-16 md:space-y-24">
             {projects.map((p, i) => (
-              <Reveal key={p.slug}>
-                <article className={`group grid gap-6 md:grid-cols-12 md:items-end ${i % 2 ? "" : ""}`}>
+              <article key={p.slug} className="group grid gap-6 md:grid-cols-12 md:items-end">
+                <Reveal image className={`md:col-span-8 ${i % 2 ? "md:order-2" : ""}`}>
                   <Link
                     href={`/work/${p.slug}`}
-                    className={`block overflow-hidden md:col-span-8 ${i % 2 ? "md:order-2" : ""}`}
+                    className="block overflow-hidden"
                     aria-label={`View ${p.title}`}
                   >
                     <Image
@@ -121,7 +121,9 @@ export default function Home() {
                       className={`img-calm w-full object-cover ${i === 0 ? "aspect-[16/9]" : "aspect-[4/3]"}`}
                     />
                   </Link>
-                  <div className={`md:col-span-4 ${i % 2 ? "md:order-1" : ""}`}>
+                </Reveal>
+                <Reveal delay={150} className={`md:col-span-4 ${i % 2 ? "md:order-1" : ""}`}>
+                  <div>
                     <p className="text-[12px] tracking-[0.14em] text-[#685745]">
                       0{i + 1} — {p.category} / {p.location}
                     </p>
@@ -129,13 +131,13 @@ export default function Home() {
                     <p className="mt-3 text-[15px] leading-relaxed text-[#3A2016]/75">“{p.description}”</p>
                     <Link
                       href={`/work/${p.slug}`}
-                      className="mt-5 inline-block text-[13px] font-medium tracking-[0.08em] text-[#3A2016]"
+                      className="alink mt-5 inline-block text-[13px] font-medium tracking-[0.08em] text-[#3A2016]"
                     >
-                      VIEW PROJECT →
+                      VIEW PROJECT <span className="arr" aria-hidden>→</span>
                     </Link>
                   </div>
-                </article>
-              </Reveal>
+                </Reveal>
+              </article>
             ))}
           </div>
         </div>
@@ -155,11 +157,11 @@ export default function Home() {
           <div className="mt-10 divide-y divide-white/12 border-y border-white/12">
             {services.slice(0, 5).map((s, i) => (
               <Reveal key={s.slug}>
-                <Link href={`/services/${s.slug}`} className="group grid gap-3 py-6 md:grid-cols-12 md:items-baseline md:py-7">
+                <Link href={`/services/${s.slug}`} className="service-row group grid gap-3 py-6 md:grid-cols-12 md:items-baseline md:py-7">
                   <span className="text-[13px] text-[#E9E8E8]/55 md:col-span-1">0{i + 1}</span>
-                  <span className="text-xl font-medium md:col-span-4 md:text-2xl">{s.title}</span>
+                  <span className="text-xl font-medium md:col-span-4 md:text-2xl"><span className="srv-title">{s.title}</span></span>
                   <span className="text-[14px] leading-relaxed text-[#E9E8E8]/70 md:col-span-6">{s.statement}</span>
-                  <span className="text-[13px] tracking-[0.08em] md:col-span-1 md:text-right">→</span>
+                  <span className="text-[13px] tracking-[0.08em] md:col-span-1 md:text-right"><span className="srv-arrow" aria-hidden>→</span></span>
                 </Link>
               </Reveal>
             ))}
@@ -199,9 +201,9 @@ export default function Home() {
           </ol>
           <Link
             href="/approach"
-            className="mt-8 inline-block border-b border-[#3A2016] pb-1 text-[13px] font-medium tracking-[0.08em] text-[#3A2016]"
+            className="alink mt-8 inline-block border-b border-[#3A2016] pb-1 text-[13px] font-medium tracking-[0.08em] text-[#3A2016]"
           >
-            HOW WE WORK →
+            HOW WE WORK <span className="arr" aria-hidden>→</span>
           </Link>
         </div>
       </section>
@@ -223,8 +225,8 @@ export default function Home() {
               [IMAGES.materialStone, "Stone and surface"],
               [IMAGES.materialFabric, "Fabric and softness"],
               [IMAGES.materialLight, "Light and hardware"],
-            ].map(([src, alt]) => (
-              <Reveal image key={alt as string}>
+            ].map(([src, alt], i) => (
+              <Reveal image key={alt as string} delay={i * 90}>
                 <figure className="overflow-hidden bg-white/5">
                   <Image
                     src={src as string}
@@ -324,14 +326,14 @@ export default function Home() {
           <Reveal>
             <div className="flex flex-wrap items-end justify-between gap-6">
               <SectionHeading index="Journal" title="Notes on living well." />
-              <Link href="/journal" className="border-b border-[#3A2016] pb-1 text-[13px] font-medium tracking-[0.08em] text-[#3A2016]">
-                ALL ARTICLES →
+              <Link href="/journal" className="alink border-b border-[#3A2016] pb-1 text-[13px] font-medium tracking-[0.08em] text-[#3A2016]">
+                ALL ARTICLES <span className="arr" aria-hidden>→</span>
               </Link>
             </div>
           </Reveal>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {journalPosts.map((j) => (
-              <Reveal key={j.slug}>
+            {journalPosts.map((j, i) => (
+              <Reveal key={j.slug} delay={i * 90}>
                 <Link href={`/journal/${j.slug}`} className="group block">
                   <span className="block overflow-hidden">
                     <Image

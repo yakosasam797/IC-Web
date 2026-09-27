@@ -32,8 +32,8 @@ export default function ServicesPage() {
                   <p className="text-[12px] tracking-[0.14em] text-[#685745]">0{i + 1}</p>
                   <h2 className="mt-2 text-3xl font-medium text-[#3A2016]">{s.title}</h2>
                   <p className="mt-3 text-[15px] leading-relaxed text-[#3A2016]/75">{s.statement}</p>
-                  <Link href={`/services/${s.slug}`} className="mt-5 inline-block text-[13px] font-medium tracking-[0.08em] text-[#3A2016]">
-                    ABOUT THIS SERVICE →
+                  <Link href={`/services/${s.slug}`} className="alink mt-5 inline-block text-[13px] font-medium tracking-[0.08em] text-[#3A2016]">
+                    ABOUT THIS SERVICE <span className="arr" aria-hidden>→</span>
                   </Link>
                 </div>
                 <div className="md:col-span-4">

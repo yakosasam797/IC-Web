@@ -67,11 +67,11 @@ body {
 
 /* Cinematic hero entrance — one orchestrated moment: image settles, lines rise in sequence */
 @keyframes hero-settle {
-  from { transform: scale(1.09); }
-  to { transform: scale(1); }
+  from { transform: scale(1.05); opacity: 0.6; }
+  to { transform: scale(1); opacity: 1; }
 }
 .hero-img {
-  animation: hero-settle 2.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: hero-settle 2s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @keyframes hero-rise {
@@ -120,6 +120,76 @@ body {
   transform-origin: left center;
 }
 
+:root {
+  --ease-arch: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-link: 300ms;
+  --dur-row: 450ms;
+}
+
+/* Header entrance — navigation appears softly on page load */
+@keyframes header-in {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: none; }
+}
+.site-header {
+  animation: header-in 0.6s var(--ease-arch) both;
+}
+
+/* Page transition — new page fades slightly and settles (via app/template.tsx) */
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+.page-enter {
+  animation: page-enter 0.55s var(--ease-arch) both;
+}
+
+/* Arrow language — one consistent nudge used by every link and button.
+   Fires on card hover (project images) and on direct link hover. */
+.arr, .arr-l {
+  display: inline-block;
+  transition: transform var(--dur-link) var(--ease-arch);
+}
+.group:hover .arr, .alink:hover .arr {
+  transform: translateX(6px);
+}
+.group:hover .arr-l, .alink:hover .arr-l {
+  transform: translateX(-6px);
+}
+.alink {
+  transition: color var(--dur-link) var(--ease-arch), border-color var(--dur-link) var(--ease-arch);
+}
+
+/* Service rows — background breathes, title and arrow drift on hover */
+.service-row {
+  transition: background-color var(--dur-row) var(--ease-arch);
+}
+.service-row:hover {
+  background-color: rgba(233, 232, 232, 0.07);
+}
+.service-row .srv-title {
+  display: block;
+  transition: transform var(--dur-row) var(--ease-arch);
+}
+.service-row:hover .srv-title {
+  transform: translateX(5px);
+}
+.service-row .srv-arrow {
+  display: inline-block;
+  transition: transform var(--dur-row) var(--ease-arch);
+}
+.service-row:hover .srv-arrow {
+  transform: translateX(8px);
+}
+
+/* Form states — focus settles into Deep Brown; errors stay muted, never loud */
+input, textarea, select {
+  transition: border-color var(--dur-link) var(--ease-arch), background-color var(--dur-link) var(--ease-arch);
+}
+input:user-invalid, textarea:user-invalid, select:user-invalid {
+  border-color: #9a4a35;
+}
+
 :focus-visible {
   outline: 2px solid #3a2016;
   outline-offset: 3px;
@@ -136,5 +206,9 @@ body {
   .hero-line { opacity: 1 !important; animation: none !important; }
   .line-grow { transform: none !important; transition: none !important; }
   .nav-link::after { display: none; }
+  .site-header { animation: none; }
+  .page-enter { animation: none; }
+  .arr, .arr-l, .service-row .srv-title, .service-row .srv-arrow { transition: none; }
+  .group:hover .arr, .alink:hover .arr { transform: none; }
   html { scroll-behavior: auto; }
 }

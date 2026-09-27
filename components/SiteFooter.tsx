@@ -67,9 +67,9 @@ export function SiteFooter() {
             </p>
             <Link
               href="/contact"
-              className="mt-5 inline-block bg-[#E9E8E8] px-6 py-3 text-[13px] font-medium tracking-[0.06em] text-[#3A2016] hover:bg-white"
+              className="group mt-5 inline-block bg-[#E9E8E8] px-6 py-3 text-[13px] font-medium tracking-[0.06em] text-[#3A2016] hover:bg-white"
             >
-              START A PROJECT →
+              START A PROJECT <span className="arr" aria-hidden>→</span>
             </Link>
           </div>
         </div>
