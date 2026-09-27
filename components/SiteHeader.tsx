@@ -34,17 +34,15 @@ export function SiteHeader() {
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 md:h-[72px] md:px-8">
         <Link href="/" className="flex items-center" aria-label="InfinityCrafts home">
-          {/* Supplied logo asset, used exactly as provided — light chip so original colours hold over imagery */}
-          <span className="inline-block rounded-[4px] bg-[#E9E8E8] px-2.5 py-1.5">
-            <Image
-              src="/infinitycrafts-logo.svg"
-              alt="InfinityCrafts"
-              width={208}
-              height={47}
-              priority
-              className="h-8 w-auto md:h-9"
-            />
-          </span>
+          {/* Supplied logo assets, used exactly as provided — white over imagery, brown on the light bar */}
+          <Image
+            src={scrolled ? "/infinitycrafts-logo.svg" : "/infinitycrafts-logo-white.svg"}
+            alt="InfinityCrafts"
+            width={208}
+            height={47}
+            priority
+            className="h-8 w-auto md:h-9"
+          />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
@@ -52,7 +50,7 @@ export function SiteHeader() {
             <Link
               key={l.href}
               href={l.href}
-              className={`text-[13.5px] tracking-wide transition-colors ${
+              className={`nav-link text-[13.5px] tracking-wide transition-colors ${
                 scrolled ? "text-[#3A2016]/85 hover:text-[#3A2016]" : "text-white/85 hover:text-white"
               }`}
             >

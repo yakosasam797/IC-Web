@@ -8,17 +8,15 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-20">
         <div className="grid gap-12 md:grid-cols-[1.3fr_1fr_1fr_1.2fr]">
           <div>
-            {/* Supplied logo asset, used exactly as provided — light panel preserves original colours on the dark footer */}
-            <span className="inline-block rounded-[4px] bg-[#E9E8E8] px-3 py-2">
-              <Image
-                src="/infinitycrafts-logo.svg"
-                alt="InfinityCrafts"
-                width={208}
-                height={47}
-                loading="lazy"
-                className="h-9 w-auto"
-              />
-            </span>
+            {/* Supplied white logo asset, used exactly as provided */}
+            <Image
+              src="/infinitycrafts-logo-white.svg"
+              alt="InfinityCrafts"
+              width={208}
+              height={47}
+              loading="lazy"
+              className="h-9 w-auto"
+            />
             <p className="mt-4 max-w-xs text-[15px] leading-relaxed text-[#E9E8E8]/75">
               Interior spaces, thoughtfully crafted.
             </p>

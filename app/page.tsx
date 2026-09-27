@@ -15,20 +15,20 @@ export default function Home() {
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="hero-img object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-black/25" />
         <div className="relative mx-auto w-full max-w-7xl px-5 pb-14 pt-32 md:px-8 md:pb-20">
-          <Reveal>
-            <p className="text-[12px] tracking-[0.16em] text-white/70">INTERIOR DESIGN STUDIO — BANGALORE</p>
-            <h1 className="mt-4 max-w-3xl text-5xl leading-[1.02] font-medium tracking-tight text-white md:text-[84px]">
-              Spaces, thoughtfully crafted.
-            </h1>
-            <p className="mt-4 max-w-xl text-[16px] leading-relaxed text-white/80 md:text-lg">
-              Interior design shaped around the way you live. Residential interiors designed with
-              clarity, warmth and attention to every detail.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3">
+          <p className="hero-line hero-line-1 text-[12px] tracking-[0.16em] text-white/70">INTERIOR DESIGN STUDIO — BANGALORE</p>
+          <h1 className="mt-4 max-w-3xl text-5xl leading-[1.02] font-medium tracking-tight text-white md:text-[84px]">
+            <span className="hero-line hero-line-2">Spaces, thoughtfully</span>
+            <span className="hero-line hero-line-3">crafted.</span>
+          </h1>
+          <p className="hero-line hero-line-3 mt-4 max-w-xl text-[16px] leading-relaxed text-white/80 md:text-lg">
+            Interior design shaped around the way you live. Residential interiors designed with
+            clarity, warmth and attention to every detail.
+          </p>
+          <div className="hero-line hero-line-4 mt-7 flex flex-wrap gap-3">
               <Link
                 href="/work"
                 className="bg-[#E9E8E8] px-7 py-3.5 text-[13px] font-medium tracking-[0.06em] text-[#3A2016] hover:bg-white"
@@ -42,7 +42,6 @@ export default function Home() {
                 START A PROJECT
               </Link>
             </div>
-          </Reveal>
         </div>
       </section>
 
@@ -98,6 +97,9 @@ export default function Home() {
                 VIEW ALL PROJECTS
               </Link>
             </div>
+          </Reveal>
+          <Reveal className="mt-10">
+            <div className="continuity-line line-grow" aria-hidden />
           </Reveal>
 
           <div className="mt-12 space-y-16 md:space-y-24">

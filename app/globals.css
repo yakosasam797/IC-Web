@@ -65,6 +65,61 @@ body {
   border-left: 1px solid rgba(58, 32, 22, 0.14);
 }
 
+/* Cinematic hero entrance — one orchestrated moment: image settles, lines rise in sequence */
+@keyframes hero-settle {
+  from { transform: scale(1.09); }
+  to { transform: scale(1); }
+}
+.hero-img {
+  animation: hero-settle 2.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: none; }
+}
+.hero-line {
+  display: block;
+  opacity: 0;
+  animation: hero-rise 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.hero-line-1 { animation-delay: 0.25s; }
+.hero-line-2 { animation-delay: 0.4s; }
+.hero-line-3 { animation-delay: 0.55s; }
+.hero-line-4 { animation-delay: 0.7s; }
+
+/* Continuity line draws itself when its section enters */
+.line-grow {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.is-visible.line-grow,
+.is-visible .line-grow {
+  transform: scaleX(1);
+}
+
+/* Nav links: quiet underline slides in — motion answers hover */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 1px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
 :focus-visible {
   outline: 2px solid #3a2016;
   outline-offset: 3px;
@@ -77,5 +132,9 @@ body {
     clip-path: none !important;
     transition: none !important;
   }
+  .hero-img { animation: none !important; }
+  .hero-line { opacity: 1 !important; animation: none !important; }
+  .line-grow { transform: none !important; transition: none !important; }
+  .nav-link::after { display: none; }
   html { scroll-behavior: auto; }
 }
