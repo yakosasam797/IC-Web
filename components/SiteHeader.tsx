@@ -65,13 +65,7 @@ export function SiteHeader() {
           </Link>
         </nav>
 
-        <div className="flex shrink-0 items-center gap-2 sm:gap-3 lg:hidden">
-          <Link
-            href="/contact"
-            className="bg-[#3A2016] px-3 py-2.5 text-[11px] font-medium tracking-[0.06em] whitespace-nowrap text-white"
-          >
-            START A PROJECT
-          </Link>
+        <div className="flex shrink-0 items-center lg:hidden">
           <button
             onClick={() => setOpen(!open)}
             aria-expanded={open}
