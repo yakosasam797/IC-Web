@@ -1,26 +1,81 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-bark: #3a2016;
+  --color-earth: #685745;
+  --color-taupe: #8a7c69;
+  --color-bone: #e9e8e8;
+  --color-parchment: #f4f2ef;
+  --color-ink: #241610;
+  --font-satoshi: "Satoshi", "Inter", system-ui, -apple-system, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-satoshi);
+  background: var(--color-bone);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #3a2016;
+  color: #e9e8e8;
+}
+
+/* Quiet editorial reveal — answers scroll, single orchestrated moment per section */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-image {
+  clip-path: inset(6% 4% 6% 4% round 2px);
+  transform: scale(1.015);
+  transition: clip-path 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-image.is-visible {
+  clip-path: inset(0 0 0 0 round 2px);
+  transform: scale(1);
+}
+
+.img-calm {
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.group:hover .img-calm {
+  transform: scale(1.035);
+}
+
+/* Continuous line motif — infinity felt as rhythm, not icon */
+.continuity-line {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(58, 32, 22, 0.35), transparent);
+}
+
+.vertical-rule {
+  border-left: 1px solid rgba(58, 32, 22, 0.14);
+}
+
+:focus-visible {
+  outline: 2px solid #3a2016;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-image, .img-calm {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    transition: none !important;
+  }
+  html { scroll-behavior: auto; }
 }

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 40" role="img" aria-label="InfinityCrafts logo placeholder">
+  <title>InfinityCrafts — replace with supplied logo asset exactly as provided</title>
+  <rect width="64" height="40" rx="4" fill="#3A2016"/>
+  <path d="M32 8 C22 8 12 14 12 20 C12 26 22 32 32 32 C36 32 38 29 38 26 V14 C38 11 40 8 44 8" stroke="#E9E8E8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M32 32 C42 32 52 26 52 20 C52 14 42 8 32 8" stroke="#E9E8E8" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.55"/>
+  <path d="M28 12v16M32 10v20M36 13v14" stroke="#E9E8E8" stroke-width="1.6" stroke-linecap="round"/>
+</svg>
