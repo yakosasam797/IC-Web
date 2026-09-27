@@ -33,7 +33,7 @@ export function SiteHeader() {
       }`}
     >
       <div className={`mx-auto flex max-w-7xl items-center justify-between px-5 transition-all duration-500 md:px-8 ${scrolled ? "h-14 md:h-16" : "h-16 md:h-[72px]"}`}>
-        <Link href="/" className="flex items-center" aria-label="InfinityCrafts home">
+        <Link href="/" className="flex min-w-0 flex-1 items-center" aria-label="InfinityCrafts home">
           {/* Supplied logo assets, used exactly as provided — white over imagery, brown on the light bar */}
           <Image
             src={scrolled ? "/infinitycrafts-logo.svg" : "/infinitycrafts-logo-white.svg"}
@@ -41,7 +41,7 @@ export function SiteHeader() {
             width={208}
             height={47}
             priority
-            className="h-8 w-auto md:h-9"
+            className="h-7 w-auto sm:h-8 md:h-9"
           />
         </Link>
 
@@ -65,10 +65,10 @@ export function SiteHeader() {
           </Link>
         </nav>
 
-        <div className="flex items-center gap-3 lg:hidden">
+        <div className="flex shrink-0 items-center gap-2 sm:gap-3 lg:hidden">
           <Link
             href="/contact"
-            className="bg-[#3A2016] px-4 py-2 text-[12px] font-medium tracking-wide text-white"
+            className="bg-[#3A2016] px-3 py-2.5 text-[11px] font-medium tracking-[0.06em] whitespace-nowrap text-white"
           >
             START A PROJECT
           </Link>
@@ -76,7 +76,7 @@ export function SiteHeader() {
             onClick={() => setOpen(!open)}
             aria-expanded={open}
             aria-label="Toggle menu"
-            className={`grid h-10 w-10 place-items-center ${scrolled ? "text-[#3A2016]" : "text-white"}`}
+            className={`grid h-11 w-11 place-items-center ${scrolled ? "text-[#3A2016]" : "text-white"}`}
           >
             <span className="block w-5">
               <span className={`block h-px bg-current transition-transform ${open ? "translate-y-[3px] rotate-45" : ""}`} />
@@ -87,17 +87,24 @@ export function SiteHeader() {
       </div>
 
       {open ? (
-        <nav className="border-t border-[#3A2016]/10 bg-[#E9E8E8] px-5 py-4 lg:hidden" aria-label="Mobile">
+        <nav className="border-t border-[#3A2016]/10 bg-[#E9E8E8] px-5 pt-2 pb-5 lg:hidden" aria-label="Mobile">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="block border-b border-[#3A2016]/8 py-3 text-[15px] text-[#3A2016]"
+              className="block border-b border-[#3A2016]/8 py-4 text-[16px] text-[#3A2016]"
             >
               {l.label}
             </Link>
           ))}
+          <Link
+            href="/contact"
+            onClick={() => setOpen(false)}
+            className="mt-4 flex min-h-[52px] items-center justify-center bg-[#3A2016] px-6 text-[13px] font-medium tracking-[0.08em] text-[#E9E8E8]"
+          >
+            START A PROJECT →
+          </Link>
         </nav>
       ) : null}
     </header>

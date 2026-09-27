@@ -14,16 +14,16 @@ export function CtaBand({
           <h2 className="text-3xl leading-tight font-medium md:text-5xl">{title}</h2>
           <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-[#E9E8E8]/70 md:text-base">{copy}</p>
         </div>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <Link
             href="/contact"
-            className="group bg-[#E9E8E8] px-7 py-3.5 text-[13px] font-medium tracking-[0.06em] text-[#3A2016] hover:bg-white"
+            className="group flex min-h-[52px] items-center justify-center bg-[#E9E8E8] px-7 py-3.5 text-[13px] font-medium tracking-[0.06em] text-[#3A2016] hover:bg-white"
           >
             START A PROJECT <span className="arr" aria-hidden>→</span>
           </Link>
           <Link
             href="/work"
-            className="border border-[#E9E8E8]/40 px-7 py-3.5 text-[13px] tracking-[0.06em] text-[#E9E8E8] hover:border-[#E9E8E8]"
+            className="flex min-h-[52px] items-center justify-center border border-[#E9E8E8]/40 px-7 py-3.5 text-[13px] tracking-[0.06em] text-[#E9E8E8] hover:border-[#E9E8E8]"
           >
             VIEW OUR WORK
           </Link>

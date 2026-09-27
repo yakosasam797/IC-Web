@@ -28,7 +28,7 @@ export default async function ServiceDetail({ params }: Props) {
       <section className="bg-[#3A2016] px-5 pt-32 pb-12 text-[#E9E8E8] md:px-8 md:pt-40 md:pb-16">
         <div className="mx-auto max-w-7xl">
           <p className="text-[12px] tracking-[0.14em] text-[#E9E8E8]/60">Services — {s.title}</p>
-          <h1 className="mt-3 max-w-3xl text-5xl leading-[1.02] font-medium tracking-tight md:text-[64px]">{s.title}</h1>
+          <h1 className="mt-3 max-w-3xl text-[clamp(2.75rem,11vw,3rem)] leading-[1.02] font-medium tracking-tight md:text-[64px]">{s.title}</h1>
           <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-[#E9E8E8]/75">{s.statement}</p>
         </div>
       </section>

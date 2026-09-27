@@ -20,7 +20,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-black/25" />
         <div className="relative mx-auto w-full max-w-7xl px-5 pb-14 pt-32 md:px-8 md:pb-20">
           <p className="hero-line hero-line-1 text-[12px] tracking-[0.16em] text-white/70">INTERIOR DESIGN STUDIO — BANGALORE</p>
-          <h1 className="mt-4 max-w-3xl text-5xl leading-[1.02] font-medium tracking-tight text-white md:text-[84px]">
+          <h1 className="mt-4 max-w-3xl text-[clamp(2.75rem,11vw,3.5rem)] leading-[1.02] font-medium tracking-tight text-white md:text-[84px]">
             <span className="hero-line hero-line-2">Spaces, thoughtfully</span>
             <span className="hero-line hero-line-3">crafted.</span>
           </h1>
@@ -28,20 +28,20 @@ export default function Home() {
             Interior design shaped around the way you live. Residential interiors designed with
             clarity, warmth and attention to every detail.
           </p>
-          <div className="hero-line hero-line-4 mt-7 flex flex-wrap gap-3">
-              <Link
-                href="/work"
-                className="bg-[#E9E8E8] px-7 py-3.5 text-[13px] font-medium tracking-[0.06em] text-[#3A2016] hover:bg-white"
-              >
-                EXPLORE OUR WORK
-              </Link>
-              <Link
-                href="/contact"
-                className="border border-white/50 px-7 py-3.5 text-[13px] tracking-[0.06em] text-white hover:border-white hover:bg-white/10"
-              >
-                START A PROJECT
-              </Link>
-            </div>
+          <div className="hero-line hero-line-4 mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <Link
+              href="/work"
+              className="flex min-h-[52px] items-center justify-center bg-[#E9E8E8] px-7 py-3.5 text-[13px] font-medium tracking-[0.06em] text-[#3A2016] hover:bg-white"
+            >
+              EXPLORE OUR WORK
+            </Link>
+            <Link
+              href="/contact"
+              className="flex min-h-[52px] items-center justify-center border border-white/50 px-7 py-3.5 text-[13px] tracking-[0.06em] text-white hover:border-white hover:bg-white/10"
+            >
+              START A PROJECT
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -209,7 +209,7 @@ export default function Home() {
                     height={900}
                     sizes="100vw"
                     loading="lazy"
-                    className="img-calm aspect-[16/8] w-full object-cover"
+                    className="img-calm aspect-[4/3] w-full object-cover md:aspect-[16/8]"
                   />
                 </Link>
               </Reveal>
