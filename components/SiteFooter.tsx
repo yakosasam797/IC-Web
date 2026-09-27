@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/data";
 
@@ -7,7 +8,17 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-20">
         <div className="grid gap-12 md:grid-cols-[1.3fr_1fr_1fr_1.2fr]">
           <div>
-            <p className="text-[15px] font-medium tracking-[0.08em]">INFINITYCRAFTS</p>
+            {/* Supplied logo asset, used exactly as provided — light panel preserves original colours on the dark footer */}
+            <span className="inline-block rounded-[4px] bg-[#E9E8E8] px-3 py-2">
+              <Image
+                src="/infinitycrafts-logo.svg"
+                alt="InfinityCrafts"
+                width={208}
+                height={47}
+                loading="lazy"
+                className="h-9 w-auto"
+              />
+            </span>
             <p className="mt-4 max-w-xs text-[15px] leading-relaxed text-[#E9E8E8]/75">
               Interior spaces, thoughtfully crafted.
             </p>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -32,31 +33,17 @@ export function SiteHeader() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 md:h-[72px] md:px-8">
-        <Link href="/" className="flex items-center gap-3" aria-label="InfinityCrafts home">
-          <span
-            aria-hidden
-            className={`grid h-9 w-9 place-items-center rounded-[4px] ${scrolled ? "bg-[#3A2016] text-[#E9E8E8]" : "bg-[#E9E8E8]/95 text-[#3A2016]"}`}
-          >
-            <svg width="22" height="14" viewBox="0 0 32 20" fill="none">
-              <path
-                d="M16 2 C10 2 4 6 4 10 C4 14 10 18 16 18 C18.5 18 20 15.5 20 13 V7 C20 4.5 21.5 2 24 2"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-              <path
-                d="M16 18 C22 18 28 14 28 10 C28 6 22 2 16 2"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                opacity="0.55"
-              />
-              <path d="M13 5v10M16 4v12M19 6v8" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-            </svg>
-          </span>
-          <span className={`leading-none ${scrolled ? "text-[#3A2016]" : "text-white"}`}>
-            <span className="block text-[15px] font-medium tracking-[0.08em]">INFINITYCRAFTS</span>
-            <span className="mt-1 block text-[11px] tracking-[0.14em] opacity-70">BANGALORE</span>
+        <Link href="/" className="flex items-center" aria-label="InfinityCrafts home">
+          {/* Supplied logo asset, used exactly as provided — light chip so original colours hold over imagery */}
+          <span className="inline-block rounded-[4px] bg-[#E9E8E8] px-2.5 py-1.5">
+            <Image
+              src="/infinitycrafts-logo.svg"
+              alt="InfinityCrafts"
+              width={208}
+              height={47}
+              priority
+              className="h-8 w-auto md:h-9"
+            />
           </span>
         </Link>
 
