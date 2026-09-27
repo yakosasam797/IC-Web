@@ -79,9 +79,12 @@ body {
   to { opacity: 1; transform: none; }
 }
 .hero-line {
-  display: block;
   opacity: 0;
   animation: hero-rise 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+/* Line-level blocking only inside the headline — never override flex layouts (e.g. hero CTAs) */
+h1 .hero-line {
+  display: block;
 }
 .hero-line-1 { animation-delay: 0.25s; }
 .hero-line-2 { animation-delay: 0.4s; }

@@ -103,42 +103,117 @@ export default function Home() {
           </Reveal>
 
           <div className="mt-12 space-y-16 md:space-y-24">
-            {projects.map((p, i) => (
-              <article key={p.slug} className="group grid gap-6 md:grid-cols-12 md:items-end">
-                <Reveal image className={`md:col-span-8 ${i % 2 ? "md:order-2" : ""}`}>
+            {/* Variant A — image left, text top-right */}
+            <article className="group grid gap-6 md:grid-cols-12 md:items-start">
+              <Reveal image className="md:col-span-8">
+                <Link
+                  href={`/work/${projects[0].slug}`}
+                  className="block overflow-hidden"
+                  aria-label={`View ${projects[0].title}`}
+                >
+                  <Image
+                    src={projects[0].heroImage}
+                    alt={`${projects[0].title}, ${projects[0].location}`}
+                    width={1600}
+                    height={900}
+                    sizes="(max-width: 768px) 100vw, 70vw"
+                    loading="lazy"
+                    className="img-calm aspect-[16/9] w-full object-cover"
+                  />
+                </Link>
+              </Reveal>
+              <Reveal delay={150} className="md:col-span-4">
+                <div className="md:pt-1">
+                  <p className="text-[12px] tracking-[0.14em] text-[#685745]">
+                    01 — {projects[0].category} / {projects[0].location}
+                  </p>
+                  <h3 className="mt-3 text-3xl font-medium text-[#3A2016] md:text-4xl">{projects[0].title}</h3>
+                  <p className="mt-3 text-[15px] leading-relaxed text-[#3A2016]/75">“{projects[0].description}”</p>
                   <Link
-                    href={`/work/${p.slug}`}
-                    className="block overflow-hidden"
-                    aria-label={`View ${p.title}`}
+                    href={`/work/${projects[0].slug}`}
+                    className="alink mt-5 inline-block text-[13px] font-medium tracking-[0.08em] text-[#3A2016]"
                   >
-                    <Image
-                      src={p.heroImage}
-                      alt={`${p.title}, ${p.location}`}
-                      width={1600}
-                      height={i === 0 ? 900 : 1100}
-                      sizes="(max-width: 768px) 100vw, 70vw"
-                      loading="lazy"
-                      className={`img-calm w-full object-cover ${i === 0 ? "aspect-[16/9]" : "aspect-[4/3]"}`}
-                    />
+                    VIEW PROJECT <span className="arr" aria-hidden>→</span>
                   </Link>
-                </Reveal>
-                <Reveal delay={150} className={`md:col-span-4 ${i % 2 ? "md:order-1" : ""}`}>
-                  <div>
+                </div>
+              </Reveal>
+            </article>
+
+            {/* Variant B — text top-left, portrait image right */}
+            <article className="group grid gap-6 md:grid-cols-12 md:items-start">
+              <Reveal delay={150} className="md:order-1 md:col-span-4">
+                <div className="md:pt-1">
+                  <p className="text-[12px] tracking-[0.14em] text-[#685745]">
+                    02 — {projects[1].category} / {projects[1].location}
+                  </p>
+                  <h3 className="mt-3 text-3xl font-medium text-[#3A2016] md:text-4xl">{projects[1].title}</h3>
+                  <p className="mt-3 text-[15px] leading-relaxed text-[#3A2016]/75">“{projects[1].description}”</p>
+                  <Link
+                    href={`/work/${projects[1].slug}`}
+                    className="alink mt-5 inline-block text-[13px] font-medium tracking-[0.08em] text-[#3A2016]"
+                  >
+                    VIEW PROJECT <span className="arr" aria-hidden>→</span>
+                  </Link>
+                </div>
+              </Reveal>
+              <Reveal image className="md:order-2 md:col-span-8">
+                <Link
+                  href={`/work/${projects[1].slug}`}
+                  className="block overflow-hidden"
+                  aria-label={`View ${projects[1].title}`}
+                >
+                  <Image
+                    src={projects[1].heroImage}
+                    alt={`${projects[1].title}, ${projects[1].location}`}
+                    width={1600}
+                    height={1100}
+                    sizes="(max-width: 768px) 100vw, 70vw"
+                    loading="lazy"
+                    className="img-calm aspect-[4/3] w-full object-cover"
+                  />
+                </Link>
+              </Reveal>
+            </article>
+
+            {/* Variant C — editorial header row on top, full-width image below */}
+            <article className="group">
+              <Reveal>
+                <div className="grid gap-6 md:grid-cols-12 md:items-end">
+                  <div className="md:col-span-7">
                     <p className="text-[12px] tracking-[0.14em] text-[#685745]">
-                      0{i + 1} — {p.category} / {p.location}
+                      03 — {projects[2].category} / {projects[2].location}
                     </p>
-                    <h3 className="mt-3 text-3xl font-medium text-[#3A2016] md:text-4xl">{p.title}</h3>
-                    <p className="mt-3 text-[15px] leading-relaxed text-[#3A2016]/75">“{p.description}”</p>
+                    <h3 className="mt-3 text-3xl font-medium text-[#3A2016] md:text-4xl">{projects[2].title}</h3>
+                  </div>
+                  <div className="md:col-span-5">
+                    <p className="text-[15px] leading-relaxed text-[#3A2016]/75">“{projects[2].description}”</p>
                     <Link
-                      href={`/work/${p.slug}`}
-                      className="alink mt-5 inline-block text-[13px] font-medium tracking-[0.08em] text-[#3A2016]"
+                      href={`/work/${projects[2].slug}`}
+                      className="alink mt-4 inline-block text-[13px] font-medium tracking-[0.08em] text-[#3A2016]"
                     >
                       VIEW PROJECT <span className="arr" aria-hidden>→</span>
                     </Link>
                   </div>
-                </Reveal>
-              </article>
-            ))}
+                </div>
+              </Reveal>
+              <Reveal image delay={120} className="mt-7">
+                <Link
+                  href={`/work/${projects[2].slug}`}
+                  className="block overflow-hidden"
+                  aria-label={`View ${projects[2].title}`}
+                >
+                  <Image
+                    src={projects[2].heroImage}
+                    alt={`${projects[2].title}, ${projects[2].location}`}
+                    width={2000}
+                    height={900}
+                    sizes="100vw"
+                    loading="lazy"
+                    className="img-calm aspect-[16/8] w-full object-cover"
+                  />
+                </Link>
+              </Reveal>
+            </article>
           </div>
         </div>
       </section>
