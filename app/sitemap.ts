@@ -4,7 +4,7 @@ import { journalPosts, projects, services } from "@/lib/data";
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://infinitycrafts.in";
   const now = new Date();
-  const staticRoutes = ["", "/work", "/services", "/approach", "/about", "/journal", "/contact"].map((r) => ({
+  const staticRoutes = ["", "/work", "/services", "/styles", "/approach", "/about", "/journal", "/contact"].map((r) => ({
     url: `${base}${r || "/"}`,
     lastModified: now,
   }));

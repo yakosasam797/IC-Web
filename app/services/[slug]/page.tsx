@@ -30,6 +30,9 @@ export default async function ServiceDetail({ params }: Props) {
           <p className="text-[12px] tracking-[0.14em] text-[#E9E8E8]/60">Services — {s.title}</p>
           <h1 className="mt-3 max-w-3xl text-[clamp(2.75rem,11vw,3rem)] leading-[1.02] font-medium tracking-tight md:text-[64px]">{s.title}</h1>
           <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-[#E9E8E8]/75">{s.statement}</p>
+          {s.note ? (
+            <p className="mt-4 inline-block border border-[#E9E8E8]/30 px-4 py-2.5 text-[13.5px] text-[#E9E8E8]/80">{s.note}</p>
+          ) : null}
         </div>
       </section>
       <section className="bg-[#E9E8E8]">

@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const projectTypes = ["Apartment", "Villa", "Independent Home", "Office", "Retail", "Hospitality", "Other"];
 const statuses = ["Exploring ideas", "Property purchased", "Under construction", "Renovation planned", "Ready to begin"];
-const scopes = ["Interior design", "Space planning", "Furniture / joinery", "Complete interior", "Consultation", "Other"];
+const scopes = ["Interior design", "Space planning", "Furniture / joinery", "Complete interior", "1:1 design session", "Consultation", "Other"];
 const timelines = ["Exploring", "1–3 months", "3–6 months", "6–12 months", "More than 12 months"];
 
 function Step({

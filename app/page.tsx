@@ -230,7 +230,7 @@ export default function Home() {
             />
           </Reveal>
           <div className="mt-10 divide-y divide-white/12 border-y border-white/12">
-            {services.slice(0, 5).map((s, i) => (
+            {services.slice(0, 6).map((s, i) => (
               <Reveal key={s.slug}>
                 <Link href={`/services/${s.slug}`} className="service-row group grid gap-3 py-6 md:grid-cols-12 md:items-baseline md:py-7">
                   <span className="text-[13px] text-[#E9E8E8]/55 md:col-span-1">0{i + 1}</span>

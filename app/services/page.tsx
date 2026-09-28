@@ -52,13 +52,45 @@ export default function ServicesPage() {
             </Reveal>
           ))}
           <Reveal>
-            <div className="bg-[#3A2016] p-8 text-[#E9E8E8] md:p-10">
-              <h2 className="text-2xl font-medium md:text-3xl">Not sure what your project needs?</h2>
-              <p className="mt-2 max-w-xl text-[15px] text-[#E9E8E8]/70">
-                Describe your space in a few lines. We will help you scope it before you commit to anything.
-              </p>
-              <Link href="/contact" className="mt-5 inline-block bg-[#E9E8E8] px-7 py-3.5 text-[13px] font-medium tracking-[0.06em] text-[#3A2016] hover:bg-white">
-                TELL US ABOUT YOUR PROJECT
+            <div className="grid gap-px bg-[#3A2016]/12 md:grid-cols-2">
+              <div className="bg-[#3A2016] p-8 text-[#E9E8E8] md:p-10">
+                <p className="text-[12px] tracking-[0.14em] text-[#E9E8E8]/60">ENGAGEMENT — 01</p>
+                <h2 className="mt-3 text-3xl font-medium">Design</h2>
+                <p className="mt-3 max-w-md text-[15px] leading-relaxed text-[#E9E8E8]/75">
+                  The complete interior on paper — plans, palette, joinery details, furniture and
+                  light — handed over as a resolved set you can execute with your own contractor.
+                </p>
+                <ul className="mt-6 space-y-2.5 text-[14px] text-[#E9E8E8]/85">
+                  {["Full drawing set", "Material and finish schedule", "Furniture specification", "Execution guidance notes"].map((x) => (
+                    <li key={x} className="border-b border-white/12 pb-2.5">{x}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-[#E9E8E8] p-8 md:p-10">
+                <p className="text-[12px] tracking-[0.14em] text-[#685745]">ENGAGEMENT — 02</p>
+                <h2 className="mt-3 text-3xl font-medium text-[#3A2016]">Design + Execution</h2>
+                <p className="mt-3 max-w-md text-[15px] leading-relaxed text-[#3A2016]/75">
+                  Everything in Design, carried onto site — reviews, finish checks and joinery
+                  alignment so the finished rooms match the drawings.
+                </p>
+                <ul className="mt-6 space-y-2.5 text-[14px] text-[#3A2016]/85">
+                  {["Everything in Design", "Scheduled site reviews", "Finish and sample sign-offs", "Snag review before handover"].map((x) => (
+                    <li key={x} className="border-b border-[#3A2016]/12 pb-2.5">{x}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </Reveal>
+          <Reveal>
+            <div className="flex flex-col gap-4 bg-white/60 p-8 md:flex-row md:items-center md:justify-between md:p-10">
+              <div>
+                <h2 className="text-2xl font-medium text-[#3A2016]">Not sure which language suits you?</h2>
+                <p className="mt-2 max-w-xl text-[15px] text-[#3A2016]/70">
+                  Browse the style catalogue — six starting moods to help you describe what home feels like.
+                </p>
+              </div>
+              <Link href="/styles" className="alink inline-block shrink-0 border border-[#3A2016]/30 px-7 py-3.5 text-[13px] font-medium tracking-[0.06em] text-[#3A2016] hover:border-[#3A2016]">
+                VIEW STYLE CATALOGUE <span className="arr" aria-hidden>→</span>
               </Link>
             </div>
           </Reveal>

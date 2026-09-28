@@ -21,6 +21,7 @@ export type Service = {
   includes: string[];
   forWhom: string;
   deliverables: string[];
+  note?: string;
 };
 
 export type JournalPost = {
@@ -158,6 +159,84 @@ export const services: Service[] = [
     includes: ["Drawing issue", "Site reviews", "Finish checks", "Joinery alignment", "Snag review"],
     forWhom: "Clients executing with their own contractor who want the design intent protected.",
     deliverables: ["Issued drawing set", "Review notes", "Finish sign-off list"],
+  },
+  {
+    slug: "one-to-one-session",
+    title: "One-to-One Design Session",
+    statement:
+      "A focused conversation with a designer about your space — direction, priorities and next steps, before you commit to a full project.",
+    includes: ["Your space, reviewed together", "Style and mood direction", "Priority list for the home", "A clear next-step plan"],
+    forWhom: "Anyone at the very start — exploring ideas, comparing options, or deciding what their home actually needs.",
+    deliverables: ["Session notes", "Direction summary", "Suggested scope for your project"],
+    note: "Session length and fee are confirmed when you enquire — nothing is charged through this website.",
+  },
+];
+
+export type StyleEntry = {
+  slug: string;
+  title: string;
+  mood: string;
+  description: string;
+  traits: string[];
+  image: string;
+};
+
+/* Editable style vocabulary — helps clients articulate taste.
+   Final wording and imagery to be reviewed with the studio. */
+export const styles: StyleEntry[] = [
+  {
+    slug: "warm-contemporary",
+    title: "Warm Contemporary",
+    mood: "Calm, current, easy to live with",
+    description:
+      "Clean lines softened by timber, textile and warm light. The most versatile starting point for Bangalore apartments and villas.",
+    traits: ["Oak and ash tones", "Soft textiles", "Low, comfortable seating", "Warm white light"],
+    image: img("photo-1600210492486-724fe5c67fb0", 1400),
+  },
+  {
+    slug: "quiet-minimal",
+    title: "Quiet Minimal",
+    mood: "Still, precise, uncluttered",
+    description:
+      "Fewer elements, each one resolved. Concealed storage, flush joinery and a restrained palette that lets space and light lead.",
+    traits: ["Flush joinery", "Concealed storage", "Restrained palette", "Shadow-gap detailing"],
+    image: img("photo-1600607687939-ce8a6c25118c", 1400),
+  },
+  {
+    slug: "earthy-textured",
+    title: "Earthy and Textured",
+    mood: "Tactile, grounded, handcrafted",
+    description:
+      "Limewash, stone, cane and weave — materials with visible craft that age gracefully and feel rooted in the Indian context.",
+    traits: ["Limewash walls", "Natural stone", "Cane and rattan", "Handloom textiles"],
+    image: img("photo-1616486338812-3dadae4b4ace", 1400),
+  },
+  {
+    slug: "classic-contemporary",
+    title: "Classic Contemporary",
+    mood: "Composed, enduring, familiar",
+    description:
+      "Proportioned rooms, panelled walls and timeless pieces — a settled language for family homes that host across generations.",
+    traits: ["Wall panelling", "Symmetric planning", "Timeless furniture", "Layered lighting"],
+    image: img("photo-1600585154340-be6161a56a0c", 1400),
+  },
+  {
+    slug: "compact-urban",
+    title: "Compact Urban",
+    mood: "Clever, light, hardworking",
+    description:
+      "Small plans that live large — every wall and corner earns its place through joinery that stores, folds and conceals.",
+    traits: ["Full-height storage", "Fold-away pieces", "Light finishes", "Mirrored depth"],
+    image: img("photo-1522708323590-d24dbb6b0267", 1400),
+  },
+  {
+    slug: "courtyard-villa",
+    title: "Villa and Courtyard Living",
+    mood: "Open, green, indoor-outdoor",
+    description:
+      "Rooms that borrow from the landscape — screens, verandas and thresholds that keep greenery in view from every seat.",
+    traits: ["Timber screens", "Veranda thresholds", "Indoor planting", "Cross ventilation"],
+    image: img("photo-1600566753086-00f18fb6b3ea", 1400),
   },
 ];
 

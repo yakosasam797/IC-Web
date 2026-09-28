@@ -28,6 +28,7 @@ export function SiteFooter() {
               {[
                 ["/work", "Work"],
                 ["/services", "Services"],
+                ["/styles", "Style catalogue"],
                 ["/approach", "Approach"],
                 ["/about", "About"],
                 ["/journal", "Journal"],
